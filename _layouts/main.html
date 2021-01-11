@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{site.title}}</title>
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/scripts/site.js"></script>
+</head>
+<body class="page-{{ page.title | slugify }}">
+    <div class="site">
+
+        <header class="site-header">
+
+            {% if page.home == true %}
+                <h1 class="site-title">
+                    <a href="/">{{site.title}}</a>
+                </h1>
+            {% else %}
+                <p class="site-title">
+                    <a href="/">{{site.title}}</a>
+                </p>
+            {% endif %}
+
+            {% include navigation.html %}
+
+        </header>
+
+        <main class="site-main">
+
+            {% if page.title %}
+            <h1>{{ page.title }}</h1>
+            {% endif %}
+
+            {{ content }}
+
+        </main>
+
+        {% include sidebar.html %}
+
+        <footer class="site-footer">
+            <p>All rights reserved &copy; {{ site.github_username }}</p>
+        </footer>
+    </div>
+
+</body>
+</html>

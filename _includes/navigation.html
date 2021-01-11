@@ -1,0 +1,16 @@
+<nav class="site-nav">
+    <ul>
+        {% for page in site.pages %}
+            {% if page.title and page.nomainnav != 1 %}
+                <li>
+                    <a href="{{ page.url }}">
+                        {% if page.icon %}
+                            <i class="fas {{ page.icon }}"></i>
+                        {% endif %}
+                        {{ page.title }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
