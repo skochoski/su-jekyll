@@ -3,7 +3,7 @@
         {% for page in site.pages %}
             {% if page.title and page.nomainnav != 1 %}
                 <li>
-                    <a href="{{ page.url }}">
+                    <a href="{{ site.baseurl }}{{ page.url }}">
                         {% if page.icon %}
                             <i class="fas {{ page.icon }}"></i>
                         {% endif %}

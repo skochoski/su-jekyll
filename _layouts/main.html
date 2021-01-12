@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{site.title}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/site.css">
-    <script src="/scripts/site.js"></script>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
+    <script src="{{ site.baseurl }}/scripts/site.js"></script>
 </head>
-<body class="page-{{ page.title | slugify }}">
+<body>
+<!-- class="page-{{ page.title | slugify }}" -->
     <div class="site">
 
         <header class="site-header">
 
             {% if page.home == true %}
                 <h1 class="site-title">
-                    <a href="/">{{site.title}}</a>
+                    <a href="{{ site.baseurl }}/">{{ site.title }}</a>
                 </h1>
             {% else %}
                 <p class="site-title">
-                    <a href="/">{{site.title}}</a>
+                    <a href="{{ site.baseurl }}/">{{ site.title }}</a>
                 </p>
             {% endif %}
 

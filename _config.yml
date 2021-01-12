@@ -22,7 +22,7 @@ title: My Project
 email: skochoski@example.com
 description: I am lazy!
 destination: docs
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/su-jekyll" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: skochoski
 github_username:  skochoski
