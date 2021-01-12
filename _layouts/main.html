@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
     <script src="{{ site.baseurl }}/scripts/site.js"></script>
 </head>
-<body>
-<!-- class="page-{{ page.title | slugify }}" -->
+<body class="{% if page.title %}page page-{{ page.title | slugify }}{% endif %}
+    {% if page.home %}home{% endif %}
+    {% if post.title %}post{% endif %}">
+
     <div class="site">
 
         <header class="site-header">
@@ -24,7 +26,7 @@
                 </p>
             {% endif %}
 
-            {% include navigation.html %}
+            {% include navigation.html location="header" %}
 
         </header>
 
