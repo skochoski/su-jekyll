@@ -1,14 +1,27 @@
 {
-  "name": "css-advanced",
+  "name": "su-jekyll",
   "version": "1.0.0",
   "description": "CSS advanced course at SoftUni 2019",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:skochoski/su-jekyll.git"
+  },
   "author": "skochoski",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "child_process": "^1.0.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-exec": "^5.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
+  }
 }

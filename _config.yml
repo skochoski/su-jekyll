@@ -22,7 +22,8 @@ title: My Project
 email: skochoski@example.com
 description: I am lazy!
 destination: docs
-baseurl: "/su-jekyll" # the subpath of your site, e.g. /blog
+# baseurl: "" # subpath for localhost
+baseurl: "/su-jekyll" # subpath for github
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: skochoski
 github_username:  skochoski
@@ -46,9 +47,13 @@ exclude:
   - gemfiles/
   - Gemfile
   - Gemfile.lock
-  - node_modules/
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
   - docs
+  - node_modules
+  - _assets
+  - gulpfile.js
+  - package.json
+  - package-lock.json
