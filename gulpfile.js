@@ -15,8 +15,12 @@ gulp.task('css', () => {
         .pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
-gulp.task('jekyll', () => {
+gulp.task('jekylldev', () => {
     return cp.spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit', shell: true });
+});
+
+gulp.task('jekyllprod', () => {
+    return cp.spawn('bundle', ['exec', 'jekyll', 'build --baseurl /su-jekyll'], { stdio: 'inherit', shell: true });
 });
 
 gulp.task('watch', () => {
@@ -35,12 +39,12 @@ gulp.task('watch', () => {
             './_layouts/*.html',
             './_posts/**/*.*',
         ]
-    ).on('change', gulp.series('jekyll', 'css'));
+    ).on('change', gulp.series('jekylldev', 'css'));
 
     gulp.watch('docs/**/*.html').on('change', browserSync.reload);
     gulp.watch('docs/**/*.js').on('change', browserSync.reload);
 });
 
-gulp.task('deploy', gulp.series('jekyll', 'css'));
+gulp.task('deploy', gulp.series('jekyllprod', 'css'));
 
-gulp.task('default', gulp.series('jekyll', 'css', 'watch'));
+gulp.task('default', gulp.series('jekylldev', 'css', 'watch'));
