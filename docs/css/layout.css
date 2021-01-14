@@ -5,6 +5,25 @@
 }
 
 @media ( min-width: 1024px ) {
+
+    .site {
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+        grid-column-gap: 4em;
+        grid-template-areas:
+            "header header"
+            "main sidebar"
+            "footer footer";
+    }
+    
+    /* .site-header { grid-column: 1 / -1; }
+    .site-footer { grid-column: 1 / -1; } */
+
+    .site-header { grid-area: header; }
+    .site-main { grid-area: main; }
+    .site-sidebar { grid-area: sidebar; }
+    .site-footer { grid-area: footer; }
+
     .site-header {
         display: flex;
         align-items: center;
