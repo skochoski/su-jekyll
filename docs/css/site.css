@@ -125,7 +125,7 @@ blockquote .author:before {
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-column-gap: 4em;
-      grid-template-areas: "header header" "main sidebar" "footer footer"; }
+      grid-template-areas: "header header" "main main" "footer footer"; }
       .site .site-header {
         grid-area: header; }
       .site .site-main {
