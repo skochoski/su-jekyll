@@ -1,15 +1,62 @@
+.site-nav {
+
+}
+
 .site-nav > ul {
     display: flex;
     padding: 0;
+
+    ul {
+        display: block;
+        pointer-events: none;
+        padding: 0.5em;
+        position: absolute;
+        top: 100%; left: 0;
+        width: 12em;
+        z-index: 1;
+
+        li {
+            opacity: 0;
+            transform: translateY(-1em);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+            @for $i from 1 through 10 {
+                &:nth-child(#{$i}) { transition-delay: 0.1s * $i; }
+            }
+        }
+    }
+
 }
 
 .site-nav li {
     display: block;
     list-style: none outside;
     padding: 0 0.5em;
+    position: relative;
+
+    li {
+        padding: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    &:hover {
+        ul {    
+            // background-color: #FFF;
+            z-index: 5;
+            pointer-events: all;
+        }
+
+        li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }
 
-.site-nav li:first-child {
+.site-nav > li:first-child {
     padding-left: 0;
 }
 
@@ -20,6 +67,7 @@
     background-color: #EEE;
 }
 
+.site-nav li:hover > a,
 .site-nav li.selected > a,
 .site-nav a:hover {
     background-color: var(--color-link-default);
@@ -31,7 +79,8 @@
     margin-right: 0.5em;
 }
 
-.site-nav li:selected > a i.fas:before,
+.site-nav li:hover > a i.fas:before,
+.site-nav li.selected > a i.fas:before,
 .site-nav a:hover i.fas:before {
     color: #FFF;
 }

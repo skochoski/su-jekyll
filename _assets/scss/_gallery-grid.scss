@@ -1,3 +1,12 @@
+.page-gallery .site {
+    @include bp( laptop ) {
+        grid-template-areas:
+            "header header"
+            "main main"
+            "footer footer";
+    }
+}
+
 .page-gallery {
     background: url('../images/body_bgrd.jpg');
 }

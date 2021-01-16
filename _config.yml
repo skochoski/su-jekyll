@@ -57,3 +57,53 @@ exclude:
   - gulpfile.js
   - package.json
   - package-lock.json
+
+navigation:
+  - url: /blog/
+    title: Blog
+    icon: fa-rss
+    items:
+      - url: /blog/
+        title: Blog
+      - url: /gallery/
+        title: Gallery
+      - url: /about/
+        title: About
+      - url: /contacts/
+        title: Contacts
+  - url: /gallery/
+    title: Gallery
+    icon: fa-image
+    items:
+      - url: /blog/
+        title: Blog
+      - url: /gallery/
+        title: Gallery
+      - url: /about/
+        title: About
+      - url: /contacts/
+        title: Contacts
+  - url: /about/
+    title: About
+    icon: fa-id-card-alt
+    items:
+      - url: /blog/
+        title: Blog
+      - url: /gallery/
+        title: Gallery
+      - url: /about/
+        title: About
+      - url: /contacts/
+        title: Contacts
+  - url: /contacts/
+    title: Contacts
+    icon: fa-address-card
+    items:
+      - url: /blog/
+        title: Blog
+      - url: /gallery/
+        title: Gallery
+      - url: /about/
+        title: About
+      - url: /contacts/
+        title: Contacts

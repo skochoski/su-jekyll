@@ -3,7 +3,7 @@
     margin: 0 auto;
     padding: 2em;
 
-    @include bp( laptop ) {
+    @include bp( desktop ) {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-column-gap: 4em;

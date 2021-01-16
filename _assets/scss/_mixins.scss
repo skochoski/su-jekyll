@@ -5,18 +5,18 @@
     }
 
     @else if $point == desktop {
-      @media (min-width: 1250px) { @content; }
+      @media (min-width: 1251px) { @content; }
     }
 
     @else if $point == laptop {
-      @media (min-width: 1024) { @content; }
+      @media (max-width: 1250) { @content; }
+    }
+
+    @else if $point == tablet {
+      @media (max-width: 900px)  { @content; }
     }
 
     @else if $point == mobile {
-      @media (max-width: 1023px)  { @content; }
-    }
-
-    @else if $point == phone {
       @media (max-width: 600px)  { @content; }
     }
 
