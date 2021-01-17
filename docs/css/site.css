@@ -247,7 +247,7 @@ blockquote .author:before {
     .site-nav li li:not(:last-child) {
       margin-bottom: 0.5em; }
   .site-nav li:hover ul {
-    z-index: 5;
+    z-index: 100;
     pointer-events: all; }
   .site-nav li:hover li {
     opacity: 1;
