@@ -1,27 +1,30 @@
 .site-nav { 
     & > ul {
-        display: flex;
         padding: 0;
 
-        ul {
-            display: block;
-            pointer-events: none;
-            padding: 0.5em;
-            position: absolute;
-            top: 100%; left: 0;
-            width: 12em;
-            z-index: 1;
-    
-            li {
-                opacity: 0;
-                transform: translateY(-1em);
-                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    
-                @for $i from 1 through 10 {
-                    &:nth-child(#{$i}) { transition-delay: 0.1s * $i; }
+        @include bp(laptop) {
+            display: flex;
+
+            ul {
+                display: block;
+                pointer-events: none;
+                padding: 0.5em;
+                position: absolute;
+                top: 100%; left: 0;
+                width: 12em;
+                z-index: 1;
+        
+                li {
+                    opacity: 0;
+                    transform: translateY(-1em);
+                    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) { transition-delay: 0.1s * $i; }
+                    }
                 }
             }
-        }
+        }        
     }
 
     li {
@@ -79,4 +82,57 @@
 .site-nav li.selected > a i.fas:before,
 .site-nav a:hover i.fas:before {
     color: #FFF;
+}
+
+.toggle-nav-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    height: 3em;
+    position: absolute;
+    top: -0.25em; right: 0.5em;
+
+    .fa-times {
+        display: none;
+    }
+}
+
+.toggle-nav {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0; left: 0;
+
+    @include bp(tablet) {
+
+        & + .site-header {
+
+            .toggle-nav-btn {
+                display: flex;
+            }
+
+            .site-nav {
+                display: none;
+            }
+        }             
+
+        &:checked + .site-header {
+
+            .site-nav {
+                display: block;
+            }
+            
+            .toggle-nav-btn {
+                
+                .fa-bars {
+                    display: none;
+                }
+                
+                .fa-times {
+                    display: block;
+                }
+            }
+        }
+    }
 }

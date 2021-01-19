@@ -3,7 +3,7 @@
     margin: 0 auto;
     padding: 2em;
 
-    @include bp( desktop ) {
+    @include bp(laptop) {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-column-gap: 4em;
@@ -16,7 +16,7 @@
         .site-main { grid-area: main; }
         .site-sidebar { grid-area: sidebar; }
         .site-footer { grid-area: footer; }
-    
+
         .site-header {
             display: flex;
             align-items: center;
